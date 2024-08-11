@@ -1,0 +1,201 @@
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    color: #333;
+    font-size: 21px;
+}
+h1 {
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Add some top margin for spacing */
+    font-size: 35px; /* Adjust the font size as needed */
+    background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet); /* Rainbow background */
+    color: white; /* Set text color to white */
+    text-shadow: 
+        -3px -1px 0 #000,  
+         3px -1px 0 #000,  
+        -3px 1px 0 #000,  
+         3px 1px 0 #000; 
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+select, input[type="text"], button {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    align-items: center;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    width: 50%;
+    
+
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+pre {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.column-input {
+    display: block;
+    width: calc(100% - 22px); /* Adjust width to fit with the container padding */
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+
+.table-input-container, .column-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.table-input, .column-input {
+    width: 50%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.remove-table, .remove-column {
+    background-color: #f44336; /* Red background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.remove-table:hover, .remove-column:hover {
+    background-color: #d32f2f; /* Darker red */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#addTable, #addColumn, #addGroupBy, #addOrderBy {
+    margin-top: 10px;
+}
+
+.table-input-container, .column-input-container, .group-by-input-container, .order-by-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.remove-table, .remove-column, .remove-group-by, .remove-order-by {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.remove-table:hover, .remove-column:hover, .remove-group-by:hover, .remove-order-by:hover {
+    background-color: #c82333;
+}
+
+#queryOutput {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+button#generateQuery {
+    margin-top: 10px;
+    background-color: #287f9c; /* Light blue color */
+    color: #fff; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Egg shape with rounded corners */
+    padding: 20px 20px; /* Padding for the egg shape */
+    font-size: 16px; /* Font size for the button text */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    justify-content: center;
+    
+}
+
+button#generateQuery:hover {
+    background-color: #71b1da; /* Slightly darker blue on hover */
+}
+
+
+
+#join-container {
+    margin-bottom: 20px;
+}
+
+.join-input,
+.join-table {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.join-table input {
+    width: 150px;
+    margin-right: 10px;
+}
+
+button.remove-join-table {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.separator {
+    border-top: 2px solid #1e1d1d; /* Light grey color for the separator line */
+    margin: 20px 0; /* Add vertical spacing around the separator */
+    width: 100%; /* Full width to span the entire container */
+}
