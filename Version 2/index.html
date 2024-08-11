@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Query Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SQL Query Builder</h1>
+        <!-- Instructions Section -->
+        <div id="instructions">
+            <h2>How to Use the SQL Query Builder</h2>
+            <p>Welcome to the SQL Query Builder! This tool helps you create SQL queries easily by selecting tables, columns, and conditions. Follow these steps to generate a query:</p>
+            <ol>
+                <li><strong>Choose Query Type:</strong> Use the dropdown menu to select the type of SQL query you want to create, such as <code>SELECT</code>, <code>SELECT AVG()</code>, or <code>SELECT COUNT(DISTINCT)</code>.</li>
+                <li><strong>Enter Table Names:</strong> Type the names of the tables you want to query in the "Enter Tables" input fields. You can add more table inputs by clicking "Add Table."</li>
+                <li><strong>Enter Columns:</strong> Type the names of the columns you want to include in the query. You can add more column inputs by clicking "Add Column."</li>
+                <li><strong>Enter a Condition:</strong> (Optional) Specify any conditions for the query in the "Condition" field. For example, enter <code>id &gt; 10</code> to filter results.</li>
+                <li><strong>Add SQL Clauses:</strong> You can now add <code>GROUP BY</code>, <code>ORDER BY</code>, and <code>LIMIT</code> clauses for more complex queries.</li>
+                <li><strong>Generate Query:</strong> Click the "Generate Query" button to create the SQL query.</li>
+                <li><strong>View Query:</strong> The generated query will appear below. You can copy it for use in your database management tool.</li>
+            </ol>
+        </div>
+
+        <div class="separator"></div>
+
+        <!-- Query Builder Section -->
+        <div id="builder">
+            <!-- Query Type Dropdown -->
+            <label for="queryType">Choose Query:</label>
+            <select id="queryType">
+                <option value="SELECT">SELECT</option>
+                <option value="SELECT AVG()">SELECT AVG()</option>
+                <option value="SELECT COUNT(DISTINCT )">SELECT COUNT(DISTINCT "")</option>
+            </select>
+
+            <div class="separator"></div>
+
+            <div id="tableInputs">
+                <label>Enter Tables:</label>
+                <div class="table-input-container">
+                    <input type="text" class="table-input" placeholder="e.g., users">
+                    <button class="remove-table">X</button>
+                </div>
+            </div>
+            <button id="addTable">Add Table</button>
+
+            <div id="columnInputs">
+                <label>Enter Columns:</label>
+                <div class="column-input-container">
+                    <input type="text" class="column-input" placeholder="e.g., id or * to select all">
+                    <button class="remove-column">X</button>
+                </div>
+            </div>
+
+
+            <button id="addColumn">Add Column</button>
+
+            <div class="separator"></div>
+
+            <div id="join-container">
+                <h2>Join Configuration</h2>
+                <div class="join-input">
+                    <label for="join-type">Join Type:</label>
+                    <select id="join-type">
+                        <option value="INNER JOIN">INNER JOIN</option>
+                        <option value="LEFT JOIN">LEFT JOIN</option>
+                        <option value="RIGHT JOIN">RIGHT JOIN</option>
+                        <option value="FULL JOIN">FULL JOIN</option>
+                    </select>
+                </div>
+
+                <div class="join-table-container">
+                    <div class="join-table">
+                        <input type="text" placeholder="Table Name" class="join-table-name">
+                        <input type="text" placeholder="Join Column" class="join-column-name">
+                        <button class="remove-join-table">X</button>
+                    </div>
+                </div>
+                <button id="add-join-table">Add Join Table</button>
+            </div>
+
+            
+            
+
+            <div class="separator"></div>
+
+            <label for="conditions">Condition:</label>
+            <input type="text" id="conditions" placeholder="e.g., id > 10">
+
+            <div class="separator"></div>
+
+            <!-- Group By Section -->
+            <div id="groupByInputs">
+                <label>GROUP BY:</label>
+                <div class="group-by-input-container">
+                    <input type="text" class="group-by-input" placeholder="e.g., category">
+                    <button class="remove-group-by">X</button>
+                </div>
+            </div>
+            <button id="addGroupBy">Add Group By</button>
+
+            <div class="separator"></div>
+
+            <label for="havingConditions">HAVING Conditions:</label>
+            <input type="text" id="havingConditions" placeholder="e.g., AVG(price) > 10.00">
+
+            <div class="separator"></div>
+
+            <!-- Order By Section -->
+            <div id="orderByInputs">
+                <label>ORDER BY:</label>
+                <div class="order-by-input-container">
+                    <input type="text" class="order-by-input" placeholder="e.g., name ASC">
+                    <button class="remove-order-by">X</button>
+                </div>
+            </div>
+            <button id="addOrderBy">Add Order By</button>
+
+            <div class="separator"></div>
+
+            <!-- Limit Section -->
+            <label for="limit">LIMIT:</label>
+            <input type="number" id="limit" placeholder="e.g., 10">
+
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <button id="generateQuery">Generate Query</button>
+        </div>
+
+        <!-- Query Output Section -->
+        <div id="queryOutput">
+            <h2>Generated SQL Query:</h2>
+            <pre id="query"></pre>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
